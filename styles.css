@@ -1,0 +1,182 @@
+body {
+  font-family: Helvetica;
+  background-image: url("images/background.png"); /* Replace with your pattern image */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-repeat: repeat; /* Repeats the image pattern */
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.valentine-image {
+  width: 150px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#question2-transition p {
+  font-size: 20px;
+}
+
+.valentine-image {
+  width: 300px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin: 20px auto; /* Center the image */
+  display: block;
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Shadow for a polished look */
+}
+
+button {
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px;
+}
+
+button:hover {
+  background: darkred;
+}
+
+#yesButton {
+  transition: transform 0.3s ease;
+}
+
+#noButton:hover {
+  background: #333;
+}
+
+.hidden {
+  display: none;
+}
+
+.question {
+  margin: 20px 0;
+}
+
+.back {
+  background: grey;
+}
+
+.food-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.food-option {
+  cursor: pointer;
+  text-align: center;
+  width: 150px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.food-option img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.food-option p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.food-option:hover {
+  transform: scale(1.05);
+}
+
+.food-option.selected {
+  border-color: #ff007f; /* Highlight color for selected option */
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+}
+
+.activity-options,
+.dessert-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.activity-option,
+.dessert-option {
+  cursor: pointer;
+  text-align: center;
+  width: 150px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.activity-option img,
+.dessert-option img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.activity-option p,
+.dessert-option p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.activity-option:hover,
+.dessert-option:hover {
+  transform: scale(1.05);
+}
+
+.activity-option.selected,
+.dessert-option.selected {
+  border-color: #ff007f; /* Highlight color for selected option */
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+}
+
+#summary {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  padding: 10px;
+  background: #ffe6f0;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.summary-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.summary-item p {
+  font-size: 18px;
+  margin: 0;
+}
