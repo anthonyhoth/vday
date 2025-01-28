@@ -11,6 +11,7 @@ function nextQuestion(isYes) {
   // Handle transition page after the first card
   if (currentStep === 1) {
     const audio = document.getElementById("backgroundAudio");
+    audio.volume = 0.2
     audio.play(); // Play the audio
     document.getElementById(`question${currentStep}`).classList.add("hidden");
     currentStep++; // Advance to the transition page
@@ -59,7 +60,7 @@ function showSummary() {
 
   // Dynamically generate the summary HTML
   const summaryHTML = `
-      <h2>can't wait! love ya bb 💕</h2>
+      <h2>sounds good! love ya bb 💕</h2>
       <p><strong>Date:</strong> ${date}</p>
       <div class="summary-item">
         <img src="${getActivityImage(
@@ -86,15 +87,16 @@ function showSummary() {
 
 // Helper functions to map selections to images
 function getActivityImage(activity) {
+  console.log("Activity:", activity);
   switch (activity) {
-    case "cuddle in bed until lunch":
-      return "/images/bed.jpg";
-    case "Movie Night":
-      return "movie-night.jpg";
-    case "Picnic":
-      return "picnic.jpg";
-    case "Romantic Walk":
-      return "romantic-walk.jpg";
+    case "cuddle in bed until dinner..":
+      return "images/bed.jpg";
+    case "jb":
+      return "images/jb.jpg";
+    case "magic puzzle":
+      return "images/puzzle.jpg";
+    case "mystery golf (with drinks!)":
+      return "images/kulnari.png";
     default:
       return "default-activity.jpg"; // Fallback image
   }
