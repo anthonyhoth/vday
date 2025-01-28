@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine's Day Card</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: pink;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+      }
+      .card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        margin: auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        padding: 10px 20px;
+        background: red;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      button:hover {
+        background: darkred;
+      }
+      .hidden {
+        display: none;
+      }
+      .question {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Valentine's Day 💖</h1>
+      <div id="question1" class="question">
+        <p>Will you be my Valentine? 🥰</p>
+        <button onclick="nextQuestion(true)">Yes</button>
+        <button onclick="nextQuestion(false)">No</button>
+      </div>
+
+      <div id="question2" class="question hidden">
+        <p>Which date are you free? 📅</p>
+        <input type="date" id="date" />
+        <button onclick="nextQuestion()">Next</button>
+      </div>
+
+      <div id="question3" class="question hidden">
+        <p>What should we do? 🎉</p>
+        <select id="activity">
+          <option value="Dinner">Dinner</option>
+          <option value="Movie">Movie</option>
+          <option value="Picnic">Picnic</option>
+          <option value="Walk">Romantic Walk</option>
+        </select>
+        <button onclick="nextQuestion()">Next</button>
+      </div>
+
+      <div id="question4" class="question hidden">
+        <p>What are we eating? 🍽️</p>
+        <select id="food">
+          <option value="Italian">Italian</option>
+          <option value="Japanese">Japanese</option>
+          <option value="Steak">Steak</option>
+          <option value="Vegan">Vegan</option>
+        </select>
+        <button onclick="nextQuestion()">Next</button>
+      </div>
+
+      <div id="question5" class="question hidden">
+        <p>What's for dessert? 🍰</p>
+        <select id="dessert">
+          <option value="Ice Cream">Ice Cream</option>
+          <option value="Cake">Cake</option>
+          <option value="Chocolates">Chocolates</option>
+          <option value="Cookies">Cookies</option>
+        </select>
+        <button onclick="showSummary()">Finish</button>
+      </div>
+
+      <div id="summary" class="hidden">
+        <h2>Our Date Plan 💕</h2>
+        <p id="summaryText"></p>
+      </div>
+    </div>
+
+    <script>
+      let currentStep = 1;
+
+      function nextQuestion(isYes) {
+        if (currentStep === 1 && isYes === false) {
+          alert("Maybe next time! 😢");
+          return;
+        }
+
+        document
+          .getElementById(`question${currentStep}`)
+          .classList.add("hidden");
+        currentStep++;
+        document
+          .getElementById(`question${currentStep}`)
+          .classList.remove("hidden");
+      }
+
+      function showSummary() {
+        const date = document.getElementById("date").value;
+        const activity = document.getElementById("activity").value;
+        const food = document.getElementById("food").value;
+        const dessert = document.getElementById("dessert").value;
+
+        document.getElementById("summaryText").innerHTML = `
+        <strong>Date:</strong> ${date}<br>
+        <strong>Activity:</strong> ${activity}<br>
+        <strong>Food:</strong> ${food}<br>
+        <strong>Dessert:</strong> ${dessert}
+      `;
+
+        document
+          .getElementById(`question${currentStep}`)
+          .classList.add("hidden");
+        document.getElementById("summary").classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>
