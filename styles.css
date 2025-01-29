@@ -195,25 +195,37 @@ button:hover {
 .summary-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
-  padding: 10px;
+  justify-content: flex-start;
+  gap: 10px;  /* Reduce extra spacing */
+  padding: 10px; /* Ensures consistent spacing */
   background: #ffe6f0;
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+  margin: 10px auto;
+  min-height: 90px; /* Force consistent height */
+  box-sizing: border-box;
 }
 
 .summary-item img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  object-position: center;
+  width: 80px; /* Ensures uniform image size */
+  height: 80px;
+  object-fit: cover; /* Ensures images are cropped instead of stretched */
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .summary-item p {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
+  text-align: left;
+  flex-grow: 1; /* Forces text to fill space evenly */
+  display: flex;
+  align-items: center; /* Ensures vertical alignment */
+}
+
+.summary-item p strong {
+  margin-right: 10px; /* Creates space between "for the day:" and the value */
+  margin-left: 10px;
 }

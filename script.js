@@ -23,7 +23,7 @@ function nextQuestion(isYes) {
       document
         .getElementById(`question${currentStep}`)
         .classList.remove("hidden");
-    }, 4000); // 3-second delay before moving to the next page
+    }, 5000); // 3-second delay before moving to the next page
     return;
   }
 
@@ -66,15 +66,15 @@ function showSummary() {
         <img src="${getActivityImage(
           selectedActivity
         )}" alt="${selectedActivity}">
-        <p><strong>for the day:</strong> ${selectedActivity}</p>
+        <p><strong>for the day: </strong> ${selectedActivity}</p>
       </div>
       <div class="summary-item">
         <img src="${getFoodImage(selectedFood)}" alt="${selectedFood}">
-        <p><strong>for the tummy:</strong> ${selectedFood}</p>
+        <p><strong>for the tummy: </strong> ${selectedFood}</p>
       </div>
       <div class="summary-item">
         <img src="images/ant.gif" alt="${selectedDessert}">
-        <p><strong>for the night:</strong> me</p>
+        <p><strong>for the night: </strong> me</p>
       </div>
     `;
 // Show teaser screen
@@ -87,7 +87,7 @@ setTimeout(() => {
   document.getElementById("summaryText").innerHTML = summaryHTML;
   document.getElementById(`question${currentStep}`).classList.add("hidden");
   document.getElementById("summary").classList.remove("hidden");
-}, 3000); // 500ms delay before switching to summary
+}, 3300); // 500ms delay before switching to summary
 }
 
 // Helper functions to map selections to images
@@ -118,7 +118,7 @@ function getFoodImage(food) {
     case "hotpot":
       return "images/guofuhotpot.jpg";
     default:
-      return "default-food.jpg"; // Fallback image
+      return "images/ant.gif"; // Fallback image
   }
 }
 
