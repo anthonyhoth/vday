@@ -43,21 +43,21 @@
       <div id="question3" class="question hidden">
         <p>what's the plan for the day? 🤔</p>
         <div class="activity-options">
-          <div class="activity-option" onclick="selectActivity('cuddle in bed until dinner')">
-            <img src="images/bed.jpg" alt="cuddle" />
-            <p>cuddle in bed until dinner..</p>
+          <div class="activity-option" onclick="selectActivity('cuddle in bed')">
+            <img src="images/bed.jpg" alt="cuddle in bed" />
+            <p>cuddle in bed</p>
           </div>
           <div class="activity-option" onclick="selectActivity('jb')">
             <img src="images/jb.jpg" alt="jb" />
             <p>jb</p>
           </div>
           <div class="activity-option" onclick="selectActivity('mystery golf')">
-            <img src="images/kulnari.png" alt="mysterygolf" />
-            <p>mystery golf (with drinks!)</p>
+            <img src="images/kulnari.png" alt="mystery golf" />
+            <p>mystery golf</p>
           </div>
           <div
             class="activity-option"
-            onclick="selectActivity('magicpuzzle')"
+            onclick="selectActivity('magic puzzle')"
           >
             <img src="images/puzzle.jpg" alt="magic puzzle" />
             <p>magic puzzle</p>
@@ -70,21 +70,21 @@
       <div id="question4" class="question hidden">
         <p>what's for dinna? 🍽️</p>
         <div class="food-options">
-          <div class="food-option" onclick="selectFood('Italian Bistro')">
-            <img src="images/stefheart.png" alt="Italian Bistro" />
-            <p>Italian Bistro</p>
+          <div class="food-option" onclick="selectFood('pasta')">
+            <img src="images/rvlt.jpg" alt="pasta" />
+            <p>pasta</p>
           </div>
-          <div class="food-option" onclick="selectFood('Sushi Paradise')">
-            <img src="sushi-paradise.jpg" alt="Sushi Paradise" />
-            <p>Sushi Paradise</p>
+          <div class="food-option" onclick="selectFood('korean')">
+            <img src="images/umyongbaek.jpg" alt="korean" />
+            <p>korean</p>
           </div>
-          <div class="food-option" onclick="selectFood('Steakhouse Delight')">
-            <img src="steakhouse-delight.jpg" alt="Steakhouse Delight" />
-            <p>Steakhouse Delight</p>
+          <div class="food-option" onclick="selectFood('japanese')">
+            <img src="images/senryo.jpg" alt="japanese" />
+            <p>japanese</p>
           </div>
-          <div class="food-option" onclick="selectFood('Vegan Garden')">
-            <img src="vegan-garden.jpg" alt="Vegan Garden" />
-            <p>Vegan Garden</p>
+          <div class="food-option" onclick="selectFood('hotpot')">
+            <img src="images/guofuhotpot.jpg" alt="hotpot" />
+            <p>hotpot</p>
           </div>
         </div>
         <button class="back" onclick="prevQuestion()">Back</button>
@@ -92,28 +92,34 @@
       </div>
 
       <div id="question5" class="question hidden">
-        <p>What's for dessert? 🍰</p>
+        <p>what's on the menu before bed?</p>
         <div class="dessert-options">
-          <div class="dessert-option" onclick="selectDessert('Ice Cream')">
-            <img src="ice-cream.jpg" alt="Ice Cream" />
-            <p>Ice Cream</p>
+          <div class="dessert-option" onclick="selectDessert('wine')">
+            <img src="images/wine.jpg" alt="wine" />
+            <p>wine</p>
           </div>
-          <div class="dessert-option" onclick="selectDessert('Cake')">
-            <img src="cake.jpg" alt="Cake" />
-            <p>Cake</p>
+          <div class="dessert-option" onclick="selectDessert('hugs')">
+            <img src="images/bear.jpg" alt="hugs" />
+            <p>hugs</p>
           </div>
-          <div class="dessert-option" onclick="selectDessert('Chocolates')">
-            <img src="chocolates.jpg" alt="Chocolates" />
-            <p>Chocolates</p>
+          <div class="dessert-option" onclick="selectDessert('movie time')">
+            <img src="images/netflix.jpg" alt="movie time" />
+            <p>movie time</p>
           </div>
-          <div class="dessert-option" onclick="selectDessert('Cookies')">
-            <img src="cookies.jpg" alt="Cookies" />
-            <p>Cookies</p>
+          <div class="dessert-option" onclick="selectDessert('tickle battle')">
+            <img src="images/wrestle.jpg" alt="tickle battle" />
+            <p>tickle battle</p>
           </div>
         </div>
         <button class="back" onclick="prevQuestion()">Back</button>
         <button onclick="showSummary()">Finish</button>
       </div>
+
+      <div id="teaser-screen" class="hidden">
+        <img src="images/ant.gif" alt="KIDDING">
+        <p>KIDDING IT'S ALL OF THE ABOVE!</p>
+      </div>
+      
 
       <div id="summary" class="hidden">
         <div id="summaryText"></div>

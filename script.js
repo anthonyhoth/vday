@@ -23,7 +23,7 @@ function nextQuestion(isYes) {
       document
         .getElementById(`question${currentStep}`)
         .classList.remove("hidden");
-    }, 5000); // 3-second delay before moving to the next page
+    }, 4000); // 3-second delay before moving to the next page
     return;
   }
 
@@ -61,57 +61,62 @@ function showSummary() {
   // Dynamically generate the summary HTML
   const summaryHTML = `
       <h2>sounds good! love ya bb 💕</h2>
-      <p><strong>Date:</strong> ${date}</p>
+      <p><strong>date:</strong> ${date}</p>
       <div class="summary-item">
         <img src="${getActivityImage(
           selectedActivity
         )}" alt="${selectedActivity}">
-        <p><strong>Activity:</strong> ${selectedActivity}</p>
+        <p><strong>for the day:</strong> ${selectedActivity}</p>
       </div>
       <div class="summary-item">
         <img src="${getFoodImage(selectedFood)}" alt="${selectedFood}">
-        <p><strong>Food:</strong> ${selectedFood}</p>
+        <p><strong>for the tummy:</strong> ${selectedFood}</p>
       </div>
       <div class="summary-item">
-        <img src="${getDessertImage(selectedDessert)}" alt="${selectedDessert}">
-        <p><strong>Dessert:</strong> ${selectedDessert}</p>
+        <img src="images/ant.gif" alt="${selectedDessert}">
+        <p><strong>for the night:</strong> me</p>
       </div>
     `;
+// Show teaser screen
+const teaserScreen = document.getElementById("teaser-screen");
+teaserScreen.classList.add("teaser-visible");
 
+// Hide teaser and show summary after 0.5 seconds
+setTimeout(() => {
+  teaserScreen.classList.remove("teaser-visible");
   document.getElementById("summaryText").innerHTML = summaryHTML;
-
-  // Hide the current question and show the summary
   document.getElementById(`question${currentStep}`).classList.add("hidden");
   document.getElementById("summary").classList.remove("hidden");
+}, 3000); // 500ms delay before switching to summary
 }
 
 // Helper functions to map selections to images
 function getActivityImage(activity) {
   console.log("Activity:", activity);
   switch (activity) {
-    case "cuddle in bed until dinner..":
+    case "cuddle in bed":
       return "images/bed.jpg";
     case "jb":
       return "images/jb.jpg";
     case "magic puzzle":
       return "images/puzzle.jpg";
-    case "mystery golf (with drinks!)":
+    case "mystery golf":
       return "images/kulnari.png";
     default:
-      return "default-activity.jpg"; // Fallback image
+      return "images/ant.gif"; // Fallback image
   }
 }
 
 function getFoodImage(food) {
   switch (food) {
-    case "Italian Bistro":
-      return "italian-bistro.jpg";
-    case "Sushi Paradise":
-      return "sushi-paradise.jpg";
-    case "Steakhouse Delight":
-      return "steakhouse-delight.jpg";
-    case "Vegan Garden":
-      return "vegan-garden.jpg";
+    case "pasta":
+      return "images/rvlt.jpg";
+    case "korean":
+      return "images/umyongbaek.jpg";
+    case "japanese":
+      return "images/senryo.jpg";
+    case "hotpot":
+      return "images/guofuhotpot.jpg";
     default:
       return "default-food.jpg"; // Fallback image
   }
