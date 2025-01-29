@@ -229,3 +229,16 @@ button:hover {
   margin-right: 10px; /* Creates space between "for the day:" and the value */
   margin-left: 10px;
 }
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.show-error {
+  opacity: 1;
+}

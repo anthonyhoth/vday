@@ -36,9 +36,10 @@
 
       <div id="question2" class="question hidden">
         <p>sooo when are we doing it? 📅</p>
-        <input type="date" id="date" />
+        <input type="date" id="date" required>
+        <span id="date-error" class="error-message"></span> <!-- Error message container -->
         <button class="back" onclick="prevQuestion()">Back</button>
-        <button onclick="nextQuestion()">Next</button>
+        <button onclick="validateDate()">Next</button>
       </div>
 
       <div id="question3" class="question hidden">

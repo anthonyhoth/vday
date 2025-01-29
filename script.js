@@ -3,6 +3,9 @@ let yesButtonSize = 1;
 
 // Move to the next question
 function nextQuestion(isYes) {
+  const currentQuestion = document.getElementById(`question${currentStep}`);
+  let errorMessage = "";
+
   if (currentStep === 1 && isYes === false) {
     alert("Maybe next time! 😢");
     return;
@@ -27,10 +30,29 @@ function nextQuestion(isYes) {
     return;
   }
 
-  // Hide the current question and show the next
-  document.getElementById(`question${currentStep}`).classList.add("hidden");
+  // Validation for each step
+  if (currentStep === 3 && !selectedActivity) {
+    errorMessage = "we're not even cuddling? :(";
+  }
+
+  if (currentStep === 4 && !selectedFood) {
+    errorMessage = "that's it... empty-bellied";
+  }
+
+  if (currentStep === 5 && !selectedDessert) {
+    errorMessage = "bb, you have to choose ONE";
+  }
+
+  if (errorMessage) {
+    showInlineError(currentQuestion, errorMessage);
+    return; // Stops progress if there’s an error
+  }
+
+  hideInlineError(currentQuestion); // Hide any previous errors
+  currentQuestion.classList.add("hidden");
   currentStep++;
   document.getElementById(`question${currentStep}`).classList.remove("hidden");
+
 }
 
 // Go back to the previous question
@@ -53,6 +75,43 @@ function makeYesBigger() {
   const yesButton = document.getElementById("yesButton");
   yesButton.style.transform = `scale(${yesButtonSize})`;
 }
+
+function validateDate() {
+  const dateInput = document.getElementById("date").value;
+  const requiredDate = "2025-02-14"; // Required date
+  const dateError = document.getElementById("date-error");
+
+  if (dateInput !== requiredDate) {
+    dateError.textContent = "silly goose, valentine's isn't on that day";
+    dateError.classList.add("show-error");
+    return;
+  }
+
+  dateError.textContent = ""; // Clear error message
+  dateError.classList.remove("show-error");
+  nextQuestion(); // Proceed only if the date is correct
+}
+
+function showInlineError(questionElement, message) {
+  let errorSpan = questionElement.querySelector(".error-message");
+  
+  if (!errorSpan) {
+    errorSpan = document.createElement("span");
+    errorSpan.classList.add("error-message", "show-error");
+    questionElement.appendChild(errorSpan);
+  }
+
+  errorSpan.textContent = message;
+}
+
+function hideInlineError(questionElement) {
+  const errorSpan = questionElement.querySelector(".error-message");
+  if (errorSpan) {
+    errorSpan.textContent = "";
+    errorSpan.classList.remove("show-error");
+  }
+}
+
 
 // Show the summary
 function showSummary() {
