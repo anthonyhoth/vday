@@ -9,6 +9,21 @@ body {
   padding: 20px;
 }
 
+#music-player {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000; /* Ensures it's always visible */
+}
+
+#music-player audio {
+  width: 400px; /* Makes the player compact */
+  height: 30px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .card {
   background: white;
   border-radius: 15px;
@@ -43,7 +58,7 @@ body {
 
 button {
   padding: 10px 20px;
-  background: red;
+  background: rgb(243, 22, 22);
   color: white;
   border: none;
   border-radius: 10px;

@@ -8,11 +8,27 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    
+    <div id="music-player">
+      <audio id="backgroundAudio" loop controls>
+        <source src="sounds/background.mp3" type="audio/mp3">
+      </audio>
+    </div>
+
     <audio
-      id="backgroundAudio"
+      id="congrats"
       src="sounds/congrats.mp3"
       preload="auto"
     ></audio>
+    <!-- Background Music (Loops Throughout the Quiz) -->
+    <audio id="backgroundAudio" loop controls>
+      <source src="sounds/background.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Teaser Sound (Plays Only During Teaser) -->
+    <audio id="teaserAudio">
+      <source src="sounds/teaser.mp3" type="audio/mp3">
+    </audio>
     <div class="card">
       <h1>stefanie,</h1>
       <div id="question1" class="question">

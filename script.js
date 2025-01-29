@@ -1,6 +1,26 @@
 let currentStep = 1;
 let yesButtonSize = 1;
 
+document.addEventListener("click", function startAudio() {
+  const bgAudio = document.getElementById("backgroundAudio");
+
+  if (bgAudio.paused) {
+    bgAudio.play().catch(error => console.log("Autoplay blocked:", error));
+  }
+
+  bgAudio.volume = 0.25;
+
+
+  bgAudio.addEventListener("play", function () {
+    if (bgAudio.volume === 1.0) {
+      bgAudio.volume = 0.25; // Reset to 50% if it jumps to 100%
+    }
+  });
+
+  // Remove event listener after first interaction
+  document.removeEventListener("click", startAudio);
+});
+
 // Move to the next question
 function nextQuestion(isYes) {
   const currentQuestion = document.getElementById(`question${currentStep}`);
@@ -13,7 +33,7 @@ function nextQuestion(isYes) {
 
   // Handle transition page after the first card
   if (currentStep === 1) {
-    const audio = document.getElementById("backgroundAudio");
+    const audio = document.getElementById("congrats");
     audio.volume = 0.2
     audio.play(); // Play the audio
     document.getElementById(`question${currentStep}`).classList.add("hidden");
@@ -151,7 +171,6 @@ setTimeout(() => {
 
 // Helper functions to map selections to images
 function getActivityImage(activity) {
-  console.log("Activity:", activity);
   switch (activity) {
     case "cuddle in bed":
       return "images/bed.jpg";
